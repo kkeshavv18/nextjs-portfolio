@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Button from "./shared/Button";
 import { MoveUp } from "lucide-react";
+import { socialLinks } from "../constants/socialLinks";
 
 // Footer navigation links
 const navigationLinks = [
@@ -10,30 +11,6 @@ const navigationLinks = [
   { name: "Projects", href: "#projects" },
   { name: "Blogs", href: "#blogs" },
   { name: "Contact", href: "#contact" },
-];
-
-// Social media links - consistent with contact section
-const socialLinks = [
-  {
-    name: "LinkedIn",
-    icon: "/placeholder.svg?height=20&width=20",
-    url: "https://linkedin.com/in/yourname",
-  },
-  {
-    name: "Twitter",
-    icon: "/placeholder.svg?height=20&width=20",
-    url: "https://twitter.com/yourname",
-  },
-  {
-    name: "GitHub",
-    icon: "/placeholder.svg?height=20&width=20",
-    url: "https://github.com/yourname",
-  },
-  {
-    name: "Instagram",
-    icon: "/placeholder.svg?height=20&width=20",
-    url: "https://instagram.com/yourname",
-  },
 ];
 
 // Quick contact info
@@ -85,13 +62,7 @@ const Footer = () => {
                   className="flex items-center justify-center w-10 h-10 border border-gray-300 rounded-lg cursor-pointer hover:-translate-y-1 hover:bg-white hover:shadow-md duration-500"
                   title={social.name}
                 >
-                  <Image
-                    src={social.icon || "/placeholder.svg"}
-                    alt={`${social.name} Icon`}
-                    width={18}
-                    height={18}
-                    className="w-4.5 h-4.5"
-                  />
+                  <social.icon className="w-4.5 h-4.5 text-gray-600 hover:text-gray-900" />
                 </a>
               ))}
             </div>
@@ -165,25 +136,6 @@ const Footer = () => {
           <Button endIcon={<MoveUp />} href="#top">
             Back to Top
           </Button>
-          {/* <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-white hover:-translate-y-1 hover:shadow-md duration-500 transition-all"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 10l7-7m0 0l7 7m-7-7v18"
-              />
-            </svg>
-            Back to Top
-          </button> */}
         </div>
       </div>
 

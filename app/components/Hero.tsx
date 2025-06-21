@@ -47,8 +47,8 @@ const Hero = () => {
           A Frontend Web Developer
         </motion.h1>
         <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.6,
             delay: 0.7,
@@ -62,19 +62,7 @@ const Hero = () => {
         </motion.p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-          {/* <motion.a
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.5,
-            }}
-            className="px-10 py-3 border border-gray-500 rounded-full ml-4 cursor-pointer flex items-center gap-2 bg-black text-white"
-            href="#contact"
-          >
-            Contact Me
-            <Image src={assets.right_arrow} alt="Arrow Icon" className="w-4" />
-          </motion.a> */}
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

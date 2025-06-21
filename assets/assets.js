@@ -30,6 +30,9 @@ import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
 import about_me_image from "./about-me-image.png";
 
+// project images
+import project1 from "../assets/public/work-1.png";
+
 export const assets = {
   code_icon,
   code_icon_dark,
@@ -48,7 +51,6 @@ export const assets = {
   profile_image,
   download_icon,
   hand_icon,
-
   moon_icon,
   sun_icon,
   arrow_icon,
@@ -60,33 +62,11 @@ export const assets = {
   mobile_icon,
   graphics_icon,
   right_arrow,
-
   right_arrow_bold,
   right_arrow_bold_dark,
   about_me_image,
+  project1,
 };
-
-
-export const infoList = [
-  {
-    icon: assets.code_icon,
-    iconDark: assets.code_icon_dark,
-    title: "Languages",
-    description: "HTML, CSS, JavaScript React Js, Next Js",
-  },
-  {
-    icon: assets.edu_icon,
-    iconDark: assets.edu_icon_dark,
-    title: "Education",
-    description: "Bsc. CSIT, Tribhuvan University",
-  },
-  {
-    icon: assets.project_icon,
-    iconDark: assets.project_icon_dark,
-    title: "Projects",
-    description: "Built more than 5 projects",
-  },
-];
 
 export const toolsData = [
   assets.vscode,

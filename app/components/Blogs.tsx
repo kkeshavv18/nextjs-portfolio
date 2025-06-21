@@ -1,90 +1,43 @@
 import Image from "next/image";
+import { blogPosts } from "../constants/blogPosts";
+import { motion } from "framer-motion";
 
 // Mock blog data - replace with your actual blog data
-const blogPosts = [
-  {
-    id: 1,
-    title: "Building Modern React Applications with TypeScript",
-    description:
-      "Learn how to leverage TypeScript in React applications for better type safety and developer experience. This comprehensive guide covers best practices and common patterns.",
-    image: "/placeholder.svg?height=200&width=300",
-    date: "Dec 15, 2024",
-    readTime: "5 min read",
-    category: "React",
-    slug: "building-modern-react-typescript",
-  },
-  {
-    id: 2,
-    title: "Next.js App Router: Complete Guide",
-    description:
-      "Explore the powerful features of Next.js App Router including server components, streaming, and advanced routing patterns for modern web applications.",
-    image: "/placeholder.svg?height=200&width=300",
-    date: "Dec 10, 2024",
-    readTime: "8 min read",
-    category: "Next.js",
-    slug: "nextjs-app-router-guide",
-  },
-  {
-    id: 3,
-    title: "CSS Grid vs Flexbox: When to Use What",
-    description:
-      "Understanding the differences between CSS Grid and Flexbox, and knowing when to use each layout method for optimal responsive design.",
-    image: "/placeholder.svg?height=200&width=300",
-    date: "Dec 5, 2024",
-    readTime: "6 min read",
-    category: "CSS",
-    slug: "css-grid-vs-flexbox",
-  },
-  {
-    id: 4,
-    title: "Performance Optimization in React",
-    description:
-      "Discover advanced techniques for optimizing React applications including code splitting, lazy loading, and performance monitoring strategies.",
-    image: "/placeholder.svg?height=200&width=300",
-    date: "Nov 28, 2024",
-    readTime: "10 min read",
-    category: "Performance",
-    slug: "react-performance-optimization",
-  },
-  {
-    id: 5,
-    title: "Frontend Testing Best Practices",
-    description:
-      "A comprehensive guide to testing frontend applications with Jest, React Testing Library, and end-to-end testing strategies.",
-    image: "/placeholder.svg?height=200&width=300",
-    date: "Nov 20, 2024",
-    readTime: "7 min read",
-    category: "Testing",
-    slug: "frontend-testing-best-practices",
-  },
-  {
-    id: 6,
-    title: "Web Accessibility: Building Inclusive UIs",
-    description:
-      "Learn how to create accessible web applications that work for everyone, including ARIA best practices and semantic HTML usage.",
-    image: "/placeholder.svg?height=200&width=300",
-    date: "Nov 15, 2024",
-    readTime: "9 min read",
-    category: "Accessibility",
-    slug: "web-accessibility-inclusive-uis",
-  },
-];
 
 const Blogs = () => {
   return (
     <div id="blogs" className="w-full px-[12%]  pb-10">
-      <h4 className="text-center text-3xl font-ovo mb-2 font-semibold">
+      <motion.h4
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+        }}
+        className="text-center text-3xl font-ovo mb-2 font-semibold"
+      >
         My Blogs
-      </h4>
-      <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+      </motion.h4>
+      <motion.p
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.6,
+          delay: 0.7,
+        }}
+        className="text-center text-gray-600 mb-10 max-w-2xl mx-auto"
+      >
         Sharing insights, tutorials, and experiences from my journey as a
         frontend developer. Explore articles on React, Next.js, TypeScript, and
         modern web development practices.
-      </p>
+      </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
         {blogPosts.map((post) => (
-          <article
+          <motion.article
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             key={post.id}
             className="border-[0.5px] border-gray-400 rounded-xl hover:bg-lightHover hover:-translate-y-1 hover:shadow-black duration-500 cursor-pointer overflow-hidden group"
           >
@@ -124,7 +77,7 @@ const Blogs = () => {
                 </span>
               </div>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
     </div>
