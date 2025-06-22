@@ -45,7 +45,7 @@ const Projects = () => {
           >
             <div className="relative overflow-hidden">
               <Image
-                src={project.image || "/placeholder.svg"}
+                src={project?.image}
                 alt={project.title}
                 width={400}
                 height={250}
@@ -86,8 +86,14 @@ const Projects = () => {
 
               {/* Action Buttons */}
               <div className="flex items-center gap-3">
-                <Button startIcon={<Github />}>Github</Button>
-                <Button variant="dark" startIcon={<ExternalLink />}>
+                <Button startIcon={<Github />} href={project.githubLink}>
+                  Github
+                </Button>
+                <Button
+                  variant="dark"
+                  startIcon={<ExternalLink />}
+                  href={project.liveLink}
+                >
                   Live Site
                 </Button>
               </div>
