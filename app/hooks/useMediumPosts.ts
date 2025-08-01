@@ -48,10 +48,8 @@ const checkMediumFeedUpdate = async (): Promise<boolean> => {
       const currentUpdate = etag || lastModified;
       if (lastFeedCheck !== currentUpdate) {
         lastFeedCheck = currentUpdate;
-        console.log("Medium feed has changed, fetching fresh data");
         return true;
       }
-      console.log("Medium feed hasn't changed, using cached data");
       return false;
     }
 
@@ -60,11 +58,9 @@ const checkMediumFeedUpdate = async (): Promise<boolean> => {
 
     if (lastBuildDate && lastFeedCheck !== lastBuildDate) {
       lastFeedCheck = lastBuildDate;
-      console.log("Medium feed has changed, fetching fresh data");
       return true;
     }
 
-    console.log("Medium feed hasn't changed, using cached data");
     return false;
   } catch (error) {
     console.warn("Error checking Medium feed update:", error);
@@ -78,12 +74,10 @@ const fetchMediumPosts = async (): Promise<MediumPost[]> => {
 
   // If feed hasn't changed and we have cached data, return it
   if (!hasChanged && cachedPosts) {
-    console.log("Using cached posts, no new content on Medium");
     return cachedPosts;
   }
 
   // Only call RSS2JSON if feed has changed
-  console.log("Fetching fresh data from RSS2JSON");
   const response = await fetch(
     "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@keshavkattel1998"
   );
@@ -100,7 +94,6 @@ const fetchMediumPosts = async (): Promise<MediumPost[]> => {
 
   // Cache the fresh data
   cachedPosts = data.items;
-  console.log(`Fetched ${data.items.length} posts from RSS2JSON`);
 
   return data.items;
 };
