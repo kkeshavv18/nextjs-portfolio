@@ -30,7 +30,7 @@ const Hero = () => {
             type: "spring",
             stiffness: 100,
           }}
-          className="flex items-end gap-2 text-xl md:text-2xl mb-3"
+          className="flex items-end gap-2 text-xl md:text-2xl mb-3 text-gray-800 dark:text-gray-200"
         >
           Hi! I am Keshav Kattel{" "}
           <Image src={assets.hand_icon} alt="hand icon" className="w-6" />
@@ -42,7 +42,7 @@ const Hero = () => {
             duration: 0.8,
             delay: 0.5,
           }}
-          className="text-3xl sm:text-5xl  font-semibold"
+          className="text-3xl sm:text-5xl font-semibold text-gray-900 dark:text-gray-100"
         >
           A Frontend Web Developer
         </motion.h1>
@@ -53,7 +53,7 @@ const Hero = () => {
             duration: 0.6,
             delay: 0.7,
           }}
-          className="max-w-2xl mx-auto text-gray-600"
+          className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300"
         >
           Passionate Frontend Developer skilled in React.js, Next.js, and
           TypeScript. I craft fast, responsive, and accessible web applications
@@ -62,7 +62,6 @@ const Hero = () => {
         </motion.p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

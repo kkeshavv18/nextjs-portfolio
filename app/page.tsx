@@ -7,11 +7,13 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Button from "./components/shared/Button";
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <ThemeToggle />
 
       <Hero />
       <About />

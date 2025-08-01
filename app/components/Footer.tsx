@@ -38,16 +38,16 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
       <div className="w-full px-[12%] py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* About Section */}
           <div className="lg:col-span-2">
-            <h3 className="text-xl font-semibold font-ovo text-gray-700 mb-4">
+            <h3 className="text-xl font-semibold font-ovo text-gray-700 dark:text-gray-100 mb-4">
               Keshav Kattel
             </h3>
-            <p className="text-gray-600 text-sm mb-6 max-w-md">
+            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 max-w-md">
               Passionate Frontend Developer specializing in React, Next.js, and
               TypeScript. I create modern, performant, and user-friendly web
               applications that bring designs to life.
@@ -59,10 +59,10 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 border border-gray-300 rounded-lg cursor-pointer hover:-translate-y-1 hover:bg-white hover:shadow-md duration-500"
+                  className="flex items-center justify-center w-10 h-10 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:-translate-y-1 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-md duration-500"
                   title={social.name}
                 >
-                  <social.icon className="w-4.5 h-4.5 text-gray-600 hover:text-gray-900" />
+                  <social.icon className="w-4.5 h-4.5 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" />
                 </a>
               ))}
             </div>
@@ -70,13 +70,15 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <div>
-            <h4 className="font-semibold text-gray-700 mb-4">Navigation</h4>
+            <h4 className="font-semibold text-gray-700 dark:text-gray-100 mb-4">
+              Navigation
+            </h4>
             <ul className="space-y-3">
               {navigationLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-600 text-sm hover:text-gray-900 hover:translate-x-1 duration-300 transition-all inline-block"
+                    className="text-gray-600 dark:text-gray-300 text-sm hover:text-blue-600 dark:hover:text-blue-400 hover:translate-x-1 duration-300 transition-all inline-block"
                   >
                     {link.name}
                   </a>
@@ -87,15 +89,17 @@ const Footer = () => {
 
           {/* Quick Contact */}
           <div>
-            <h4 className="font-semibold text-gray-700 mb-4">Get In Touch</h4>
+            <h4 className="font-semibold text-gray-700 dark:text-gray-100 mb-4">
+              Get In Touch
+            </h4>
             <ul className="space-y-3">
               {quickContact.map((contact, index) => (
                 <li key={index}>
                   <a
                     href={contact.href}
-                    className="text-gray-600 text-sm hover:text-gray-900 duration-300 transition-colors block"
+                    className="text-gray-600 dark:text-gray-300 text-sm hover:text-blue-600 dark:hover:text-blue-400 duration-300 transition-colors block"
                   >
-                    <span className="text-xs text-gray-500 block">
+                    <span className="text-xs text-gray-500 dark:text-gray-400 block">
                       {contact.label}
                     </span>
                     {contact.value}
@@ -103,29 +107,33 @@ const Footer = () => {
                 </li>
               ))}
               <li>
-                <span className="text-xs text-gray-500 block">Location</span>
-                <span className="text-gray-600 text-sm">Kathmandu, Nepal</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400 block">
+                  Location
+                </span>
+                <span className="text-gray-600 dark:text-gray-300 text-sm">
+                  Kathmandu, Nepal
+                </span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-gray-200">
+        <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-gray-200 dark:border-gray-700">
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-4 sm:mb-0">
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
               © {currentYear} Keshav. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               <a
                 href="/privacy"
-                className="text-gray-600 text-sm hover:text-gray-900 duration-300 transition-colors"
+                className="text-gray-600 dark:text-gray-400 text-sm hover:text-blue-600 dark:hover:text-blue-400 duration-300 transition-colors"
               >
                 Privacy Policy
               </a>
               <a
                 href="/terms"
-                className="text-gray-600 text-sm hover:text-gray-900 duration-300 transition-colors"
+                className="text-gray-600 dark:text-gray-400 text-sm hover:text-blue-600 dark:hover:text-blue-400 duration-300 transition-colors"
               >
                 Terms of Service
               </a>
@@ -140,9 +148,9 @@ const Footer = () => {
       </div>
 
       {/* Optional: Made with love section */}
-      <div className="bg-gray-100 py-4">
+      <div className="bg-gray-100 dark:bg-gray-800 py-4">
         <div className="w-full px-[12%]">
-          <p className="text-center text-xs text-gray-500">
+          <p className="text-center text-xs text-gray-500 dark:text-gray-400">
             Made with{" "}
             <span className="text-red-500 animate-pulse" title="love">
               ❤️

@@ -18,7 +18,7 @@ const About = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="text-center text-3xl font-ovo font-semibold"
+        className="text-center text-3xl font-ovo font-semibold text-gray-900 dark:text-gray-100"
       >
         About Me
       </motion.h4>
@@ -51,7 +51,7 @@ const About = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mb-10 mw-2xl text-gray-600"
+            className="mb-10 mw-2xl text-gray-600 dark:text-gray-300"
           >
             I'm a passionate Frontend Developer with a strong focus on building
             modern, performant, and user-friendly web applications. I specialize
@@ -72,13 +72,13 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
                 key={title}
-                className="border-[0.5px] border-gray-400 rounded-xl hover:bg-lightHover hover:-translate-y-1 hover:shadow-black duration-500 p-6 cursor-pointer"
+                className="border-[0.5px] border-gray-400 dark:border-gray-600 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-gray-600/20 duration-500 p-6 cursor-pointer bg-white dark:bg-gray-800"
               >
                 <div className="mt-3">
                   <Icon {...iconProps} />
                 </div>
 
-                <h3 className="my-4 font-semibold text-gray-700 dark:text-white">
+                <h3 className="my-4 font-semibold text-gray-700 dark:text-gray-200">
                   {title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -91,7 +91,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.3, delay: 0.5 }}
-            className="my-6 text-gray-700 font-ovo"
+            className="my-6 text-gray-700 dark:text-gray-200 font-ovo"
           >
             Tools I Use
           </motion.h4>

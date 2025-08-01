@@ -4,8 +4,6 @@ import { ExternalLink, Github } from "lucide-react";
 import { projectsData } from "../constants/projectsData"; // Import your project data
 import { motion } from "framer-motion";
 
-// Mock project data - replace with your actual project data
-
 const Projects = () => {
   return (
     <div id="projects" className="w-full px-[12%] ">
@@ -16,7 +14,7 @@ const Projects = () => {
           duration: 0.8,
           delay: 0.5,
         }}
-        className="text-center text-3xl font-ovo mb-2 font-semibold"
+        className="text-center text-3xl font-ovo mb-2 font-semibold text-gray-900 dark:text-gray-100"
       >
         My Projects
       </motion.h4>
@@ -27,7 +25,7 @@ const Projects = () => {
           duration: 0.6,
           delay: 0.7,
         }}
-        className="text-center text-gray-600 mb-10 max-w-2xl mx-auto"
+        className="text-center text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto"
       >
         A showcase of my recent work and personal projects. Each project
         demonstrates different aspects of modern web development, from frontend
@@ -41,7 +39,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             key={project.id}
-            className="border-[0.5px] border-gray-400 rounded-xl hover:bg-lightHover hover:-translate-y-1 hover:shadow-black duration-500 cursor-pointer overflow-hidden group"
+            className="border-[0.5px] border-gray-400 dark:border-gray-600 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-gray-600/20 duration-500 cursor-pointer overflow-hidden group bg-white dark:bg-gray-900"
           >
             <div className="relative overflow-hidden">
               <Image
@@ -52,31 +50,31 @@ const Projects = () => {
                 className="w-full h-48 object-cover group-hover:scale-105 duration-500"
               />
               <div className="absolute top-8 left-3">
-                <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                <span className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">
                   {project.category}
                 </span>
               </div>
             </div>
 
             <div className="p-6">
-              <h3 className="font-semibold text-gray-700 mb-3 group-hover:text-gray-900 duration-300">
+              <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 duration-300">
                 {project.title}
               </h3>
 
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
                 {project.description}
               </p>
 
               {/* Technologies Used */}
               <div className="mb-4">
-                <h4 className="text-xs font-medium text-gray-700 mb-2">
+                <h4 className="text-xs font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Technologies Used
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {project.techNames.map((tech, index) => (
                     <span
                       key={index}
-                      className="text-[11px] sm:text-xs px-2 py-1 border border-gray-300 rounded-full bg-white text-gray-700 hover:-translate-y-1 duration-300"
+                      className="text-[11px] sm:text-xs px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:-translate-y-1 duration-300"
                     >
                       {tech}
                     </span>

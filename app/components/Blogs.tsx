@@ -78,14 +78,16 @@ const Blogs = () => {
             duration: 0.8,
             delay: 0.5,
           }}
-          className="text-center text-3xl font-ovo mb-2 font-semibold"
+          className="text-center text-3xl font-ovo mb-2 font-semibold text-gray-900 dark:text-gray-100"
         >
           My Blogs
         </motion.h4>
         <div className="flex justify-center items-center h-64">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading your blog posts...</p>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 dark:border-gray-100 mx-auto mb-4"></div>
+            <p className="text-gray-600 dark:text-gray-400">
+              Loading your blog posts...
+            </p>
           </div>
         </div>
       </div>
@@ -102,11 +104,11 @@ const Blogs = () => {
             duration: 0.8,
             delay: 0.5,
           }}
-          className="text-center text-3xl font-ovo mb-2 font-semibold"
+          className="text-center text-3xl font-ovo mb-2 font-semibold text-gray-900 dark:text-gray-100"
         >
           My Blogs
         </motion.h4>
-        <div className="text-center text-red-600 py-10">
+        <div className="text-center text-red-600 dark:text-red-400 py-10">
           <p>Unable to load blog posts. Please try again later.</p>
           <p className="text-sm mt-2">{error.message}</p>
           <p className="text-sm mt-2">The system will automatically retry.</p>
@@ -124,7 +126,7 @@ const Blogs = () => {
           duration: 0.8,
           delay: 0.5,
         }}
-        className="text-center text-3xl font-ovo mb-2 font-semibold"
+        className="text-center text-3xl font-ovo mb-2 font-semibold text-gray-900 dark:text-gray-100"
       >
         My Blogs
       </motion.h4>
@@ -135,7 +137,7 @@ const Blogs = () => {
           duration: 0.6,
           delay: 0.7,
         }}
-        className="text-center text-gray-600 mb-10 max-w-2xl mx-auto"
+        className="text-center text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto"
       >
         Sharing insights, tutorials, and experiences from my journey as a
         frontend developer. Explore articles on React, Next.js, TypeScript, and
@@ -143,7 +145,7 @@ const Blogs = () => {
       </motion.p>
 
       {!blogPosts || blogPosts.length === 0 ? (
-        <div className="text-center text-gray-600 py-10">
+        <div className="text-center text-gray-600 dark:text-gray-400 py-10">
           <p>
             No blog posts found. Check out my Medium profile for the latest
             articles!
@@ -152,7 +154,7 @@ const Blogs = () => {
             href="https://medium.com/@keshavkattel1998"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 underline mt-2 inline-block"
+            className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline mt-2 inline-block"
           >
             Visit my Medium profile
           </a>
@@ -166,7 +168,7 @@ const Blogs = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
                 key={post.link}
-                className="border-[0.5px] border-gray-400 rounded-xl hover:bg-lightHover hover:-translate-y-1 hover:shadow-black duration-500 cursor-pointer overflow-hidden group"
+                className="border-[0.5px] border-gray-400 dark:border-gray-600 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-gray-600/20 duration-500 cursor-pointer overflow-hidden group bg-white dark:bg-gray-800"
                 onClick={() =>
                   window.open(post.link, "_blank", "noopener,noreferrer")
                 }
@@ -180,29 +182,29 @@ const Blogs = () => {
                     className="w-full h-48 object-cover group-hover:scale-105 duration-500"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700">
+                    <span className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600">
                       {getCategoryFromTags(post.categories)}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                  <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400 mb-3">
                     <span>{formatDate(post.pubDate)}</span>
                     <span>•</span>
                     <span>{extractReadTime(post.description)}</span>
                   </div>
 
-                  <h3 className="font-semibold text-gray-700 mb-3 line-clamp-2 group-hover:text-gray-900 duration-300">
+                  <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-3 line-clamp-2 group-hover:text-gray-900 dark:group-hover:text-white duration-300">
                     {post.title}
                   </h3>
 
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
                     {post.description.replace(/<[^>]*>/g, "")}
                   </p>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900 duration-300">
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 duration-300">
                       Read More →
                     </span>
                   </div>
@@ -223,7 +225,7 @@ const Blogs = () => {
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 Previous
               </button>
@@ -238,7 +240,7 @@ const Blogs = () => {
                       className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                         currentPage === page
                           ? "bg-blue-600 text-white"
-                          : "text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                          : "text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white"
                       }`}
                     >
                       {page}
@@ -251,7 +253,7 @@ const Blogs = () => {
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 Next
               </button>
@@ -264,7 +266,7 @@ const Blogs = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.9 }}
-              className="text-center text-sm text-gray-500 mt-4"
+              className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4"
             >
               Showing {startIndex + 1} to {Math.min(endIndex, totalPosts)} of{" "}
               {totalPosts} posts

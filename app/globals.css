@@ -5,6 +5,8 @@
 
 * {
   font-family: Outfit;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 @theme {
@@ -20,4 +22,10 @@
   /* box shadow  */
   --shadow-black: 4px 4px 0 #000;
   --shadow-white: 4px 4px 0 #fff;
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-lightHover: #2a004a;
+  --color-darkHover: #e1dcdb;
 }
