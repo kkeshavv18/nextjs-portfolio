@@ -1,19 +1,32 @@
 import Image from "next/image";
 import Button from "./shared/Button";
 import { ExternalLink, Github } from "lucide-react";
-import { projectsData } from "../constants/projectsData"; // Import your project data
+import { projectsData } from "../constants/projectsData";
 import { motion } from "framer-motion";
+import { useState } from "react";
+
+const PROJECTS_PER_PAGE = 6;
 
 const Projects = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalProjects = projectsData.length;
+  const totalPages = Math.ceil(totalProjects / PROJECTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
+  const endIndex = startIndex + PROJECTS_PER_PAGE;
+  const currentProjects = projectsData.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    const section = document.getElementById("projects");
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div id="projects" className="w-full px-[12%] ">
       <motion.h4
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-        }}
+        transition={{ duration: 0.8, delay: 0.5 }}
         className="text-center text-3xl font-ovo mb-2 font-semibold text-gray-900 dark:text-gray-100"
       >
         My Projects
@@ -21,10 +34,7 @@ const Projects = () => {
       <motion.p
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: 0.7,
-        }}
+        transition={{ duration: 0.6, delay: 0.7 }}
         className="text-center text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto"
       >
         A showcase of my recent work and personal projects. Each project
@@ -33,7 +43,7 @@ const Projects = () => {
       </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
-        {projectsData.map((project) => (
+        {currentProjects.map((project) => (
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -99,6 +109,64 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex justify-center items-center gap-2 mt-8"
+        >
+          {/* Previous Button */}
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            Previous
+          </button>
+
+          {/* Page Numbers */}
+          <div className="flex items-center gap-1">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  currentPage === page
+                    ? "bg-blue-600 text-white"
+                    : "text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            Next
+          </button>
+        </motion.div>
+      )}
+
+      {/* Projects Info */}
+      {totalProjects > 0 && (
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4"
+        >
+          Showing {startIndex + 1} to {Math.min(endIndex, totalProjects)} of{" "}
+          {totalProjects} projects
+        </motion.p>
+      )}
     </div>
   );
 };
