@@ -4,21 +4,21 @@ export const socialLinks = [
   {
     name: "Linkedin",
     icon: Linkedin,
-    url: "https://linkedin.com/in/yourname",
+    url: "https://www.linkedin.com/in/keshavkattel/",
   },
   {
     name: "Facebook",
     icon: Facebook,
-    url: "https://facebook.com/yourname",
+    url: "https://www.facebook.com/keshav.kattel.2025?rdid=Va0NJIhtYVfc9FEo&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AxYEJRq3o%2F#",
   },
   {
     name: "Github",
     icon: Github,
-    url: "https://github.com/yourname",
+    url: "https://github.com/kkeshavv18",
   },
   {
     name: "Instagram",
     icon: Instagram,
-    url: "https://instagram.com/yourname",
+    url: "#",
   },
 ];
