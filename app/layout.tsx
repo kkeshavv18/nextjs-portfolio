@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
+import Providers from "./providers";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -27,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${outfit.className} ${ovo.className} antialiased overflow-x-hidden`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
