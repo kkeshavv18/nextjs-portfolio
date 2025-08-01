@@ -1,7 +1,4 @@
-import { assets, toolsData } from "@/assets/assets";
 import { motion } from "framer-motion";
-
-import Image from "next/image";
 import React from "react";
 import { infoList } from "../constants/infoList";
 
@@ -12,13 +9,13 @@ const About = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="about"
-      className="w-full px-[12%] pb-10"
+      className="w-full px-[12%] py-20"
     >
       <motion.h4
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="text-center text-3xl font-ovo font-semibold text-gray-900 dark:text-gray-100"
+        className="text-center text-4xl font-ovo font-bold text-gray-900 dark:text-gray-100 mb-4"
       >
         About Me
       </motion.h4>
@@ -26,93 +23,66 @@ const About = () => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="flex w-full flex-col lg:flex-row items-center gap-20 my-10 "
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="max-w-4xl mx-auto text-center"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="w-64 sm:w-80 rounded-3xl max-w-none "
+          className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-16 max-w-3xl mx-auto"
         >
-          <Image
-            src={assets.about_me_image}
-            alt="Profile Image"
-            className="w-full border-[0.5px] border-gray-400 rounded-xl shadow-black "
-          />
-        </motion.div>
+          I'm a passionate Frontend Developer with a strong focus on building
+          modern, performant, and user-friendly web applications. I specialize
+          in React, Next.js, and TypeScript, creating clean and maintainable
+          code that brings design to life. Whether it's crafting responsive
+          UIs or optimizing frontend performance, I enjoy turning complex
+          problems into elegant solutions.
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex-1"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
         >
-          <motion.p
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mb-10 mw-2xl text-gray-600 dark:text-gray-300"
-          >
-            I'm a passionate Frontend Developer with a strong focus on building
-            modern, performant, and user-friendly web applications. I specialize
-            in React, Next.js, and TypeScript, creating clean and maintainable
-            code that brings design to life. Whether it's crafting responsive
-            UIs or optimizing frontend performance, I enjoy turning complex
-            problems into elegant solutions.
-          </motion.p>
-          <motion.ul
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl"
-          >
-            {infoList.map(({ icon: Icon, iconProps, title, description }) => (
-              <motion.li
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                key={title}
-                className="border-[0.5px] border-gray-400 dark:border-gray-600 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-gray-600/20 duration-500 p-6 cursor-pointer bg-white dark:bg-gray-800"
-              >
-                <div className="mt-3">
-                  <Icon {...iconProps} />
+          {infoList.map(({ icon: Icon, iconProps, title, description }, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+              key={title}
+              className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 transition-all duration-500 cursor-pointer overflow-hidden"
+            >
+              {/* Background gradient on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="flex justify-center mb-6">
+                  <div className="p-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl group-hover:bg-blue-200 dark:group-hover:bg-blue-800/40 transition-colors duration-300">
+                    <Icon 
+                      {...iconProps} 
+                      className="text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300" 
+                      size={32}
+                    />
+                  </div>
                 </div>
 
-                <h3 className="my-4 font-semibold text-gray-700 dark:text-gray-200">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                   {title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                   {description}
                 </p>
-              </motion.li>
-            ))}
-          </motion.ul>
-          <motion.h4
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.3, delay: 0.5 }}
-            className="my-6 text-gray-700 dark:text-gray-200 font-ovo"
-          >
-            Tools I Use
-          </motion.h4>
-          <motion.ul
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.6 }}
-            className="flex items-center gap-3 sm:gap-5 flex-wrap"
-          >
-            {toolsData.map((tool, index) => (
-              <motion.li
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                key={index}
-                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
-              >
-                <Image src={tool} alt={`${tool} Icon`} className="w-5 sm:w-7" />
-              </motion.li>
-            ))}
-          </motion.ul>
+              </div>
+
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-700" />
+              <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full translate-y-8 -translate-x-8 group-hover:scale-125 transition-transform duration-700" />
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </motion.div>
