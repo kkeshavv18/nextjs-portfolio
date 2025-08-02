@@ -91,24 +91,6 @@ const Hero = () => {
               Resume
             </Button>
           </motion.div>
-          {/* <motion.a
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.5,
-            }}
-            href="/sample-resume.pdf"
-            download
-            className="px-10 py-3 border border-gray-500 rounded-full ml-4 cursor-pointer flex items-center gap-2"
-          >
-            Resume
-            <Image
-              src={assets.download_icon}
-              alt="Arrow Icon"
-              className=" w-4"
-            />
-          </motion.a> */}
         </div>
       </div>
     </div>

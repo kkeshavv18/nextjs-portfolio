@@ -81,21 +81,6 @@ const Navbar: React.FC = () => {
           </li>
         </ul>
         <div className="cursor-pointer flex items-center gap-4 lg:gap-6">
-          {/* Theme toggle button will be handled by ThemeToggle component */}
-
-          {/* <Button
-            endIcon={<ExternalLink />}
-            className="hidden lg:flex"
-            href="#blogs"
-            variant="dark"
-          >
-            Blogs
-          </Button> */}
-
-          {/* <a className="hidden lg:flex items-center gap-3 px-10 py-2 border border-gray-500 rounded-full ml-4 cursor-pointer">
-            Blogs
-            <Image src={assets.arrow_icon} alt="Arrow Icon" className="w-3" />
-          </a> */}
           <button className="cursor-pointer md:hidden ml-3" onClick={openMenu}>
             <Image
               src={assets.menu_black}
