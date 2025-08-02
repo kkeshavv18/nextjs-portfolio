@@ -55,7 +55,7 @@ const Contact = () => {
           duration: 0.8,
           delay: 0.5,
         }}
-        className=" text-3xl font-ovo font-semibold text-gray-900 dark:text-gray-100"
+        className=" text-3xl font-ovo font-semibold primaryText dark:text-primaryText-dark"
       >
         Get In Touch
       </motion.h4>
@@ -66,7 +66,7 @@ const Contact = () => {
           duration: 0.6,
           delay: 0.7,
         }}
-        className=" text-gray-600 dark:text-gray-300"
+        className=" text-secondaryText dark:text-secondaryText-dark"
       >
         Have a project in mind or want to collaborate? I'd love to hear from
         you. Send me a message and I'll get back to you as soon as possible.
@@ -93,7 +93,7 @@ const Contact = () => {
             <div className="group">
               <label
                 htmlFor="fullName"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-secondaryText-dark mb-2"
               >
                 Full Name *
               </label>
@@ -105,7 +105,7 @@ const Contact = () => {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600 focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm"
+                  className="w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondaryText-dark dark:focus:ring-secondaryText focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-secondaryText-dark dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -115,7 +115,7 @@ const Contact = () => {
             <div className="group">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-secondaryText-dark mb-2"
               >
                 Email Address *
               </label>
@@ -127,7 +127,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600 focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm"
+                  className="w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondaryText-dark dark:focus:ring-secondaryText focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-secondaryText-dark dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm"
                   placeholder="Enter your email address"
                 />
               </div>
@@ -137,7 +137,7 @@ const Contact = () => {
             <div className="group">
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-secondaryText-dark mb-2"
               >
                 Message *
               </label>
@@ -149,7 +149,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600 focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm resize-vertical"
+                  className="w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondaryText-dark dark:focus:ring-secondaryText focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-secondaryText-dark dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm resize-vertical"
                   placeholder="Tell me about your project or just say hello..."
                 />
               </div>

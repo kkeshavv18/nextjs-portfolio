@@ -78,14 +78,14 @@ const Blogs = () => {
             duration: 0.8,
             delay: 0.5,
           }}
-          className="text-center text-3xl font-ovo mb-2 font-semibold text-gray-900 dark:text-gray-100"
+          className="text-center text-3xl font-ovo mb-2 font-semibold primaryText dark:text-primaryText-dark"
         >
           My Blogs
         </motion.h4>
         <div className="flex justify-center items-center h-64">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 dark:border-gray-100 mx-auto mb-4"></div>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-secondaryText dark:text-gray-400">
               Loading your blog posts...
             </p>
           </div>
@@ -104,7 +104,7 @@ const Blogs = () => {
             duration: 0.8,
             delay: 0.5,
           }}
-          className="text-center text-3xl font-ovo mb-2 font-semibold text-gray-900 dark:text-gray-100"
+          className="text-center text-3xl font-ovo mb-2 font-semibold primaryText dark:text-primaryText-dark"
         >
           My Blogs
         </motion.h4>
@@ -126,7 +126,7 @@ const Blogs = () => {
           duration: 0.8,
           delay: 0.5,
         }}
-        className="text-center text-3xl font-ovo mb-2 font-semibold text-gray-900 dark:text-gray-100"
+        className="text-center text-3xl font-ovo mb-2 font-semibold primaryText dark:text-primaryText-dark"
       >
         My Blogs
       </motion.h4>
@@ -137,7 +137,7 @@ const Blogs = () => {
           duration: 0.6,
           delay: 0.7,
         }}
-        className="text-center text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto"
+        className="text-center text-secondaryText dark:text-gray-400 mb-10 max-w-2xl mx-auto"
       >
         Sharing insights, tutorials, and experiences from my journey as a
         frontend developer. Explore articles on React, Next.js, TypeScript, and
@@ -145,7 +145,7 @@ const Blogs = () => {
       </motion.p>
 
       {!blogPosts || blogPosts.length === 0 ? (
-        <div className="text-center text-gray-600 dark:text-gray-400 py-10">
+        <div className="text-center text-secondaryText dark:text-gray-400 py-10">
           <p>
             No blog posts found. Check out my Medium profile for the latest
             articles!
@@ -168,7 +168,7 @@ const Blogs = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
                 key={post.link}
-                className="border-[0.5px] border-gray-400 dark:border-gray-600 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-gray-600/20 duration-500 cursor-pointer overflow-hidden group bg-white dark:bg-gray-800"
+                className="border-[0.5px] border-gray-400 dark:border-secondaryText rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-secondaryText/20 duration-500 cursor-pointer overflow-hidden group bg-white dark:bg-gray-800"
                 onClick={() =>
                   window.open(post.link, "_blank", "noopener,noreferrer")
                 }
@@ -179,10 +179,10 @@ const Blogs = () => {
                     alt={post.title}
                     width={300}
                     height={200}
-                    className="w-full h-48 object-cover group-hover:scale-105 duration-500"
+                    className="w-full h-48 object-fill group-hover:scale-105 duration-500 "
                   />
                   <div className="absolute top-3 left-3">
-                    <span className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600">
+                    <span className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-secondaryText">
                       {getCategoryFromTags(post.categories)}
                     </span>
                   </div>
@@ -195,11 +195,11 @@ const Blogs = () => {
                     <span>{extractReadTime(post.description)}</span>
                   </div>
 
-                  <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-3 line-clamp-2 group-hover:text-gray-900 dark:group-hover:text-white duration-300">
+                  <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-3 line-clamp-2 group-hover:primaryText dark:group-hover:text-white duration-300">
                     {post.title}
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
+                  <p className="text-secondaryText dark:text-secondaryText-dark text-sm mb-4 line-clamp-3">
                     {post.description.replace(/<[^>]*>/g, "")}
                   </p>
 
@@ -225,7 +225,7 @@ const Blogs = () => {
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-3 py-2 text-sm font-medium text-secondaryText dark:text-secondaryText-dark bg-white dark:bg-gray-800 border border-secondaryText-dark dark:border-secondaryText rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 Previous
               </button>
@@ -240,7 +240,7 @@ const Blogs = () => {
                       className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                         currentPage === page
                           ? "bg-blue-600 text-white"
-                          : "text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white"
+                          : "text-secondaryText dark:text-secondaryText-dark bg-white dark:bg-gray-800 border border-secondaryText-dark dark:border-secondaryText hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white"
                       }`}
                     >
                       {page}
@@ -253,7 +253,7 @@ const Blogs = () => {
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-3 py-2 text-sm font-medium text-secondaryText dark:text-secondaryText-dark bg-white dark:bg-gray-800 border border-secondaryText-dark dark:border-secondaryText rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 Next
               </button>

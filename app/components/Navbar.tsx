@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
     <>
       <nav className="w-full fixed flex items-center justify-between px-5 lg:px-8 xl:px-[8%] py-4 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
         <a href="#top">
-          <p className="text-3xl font-semibold text-gray-800 dark:text-gray-100">
+          <p className="text-3xl font-semibold text-gray-800 dark:text-primaryText-dark">
             Portfolio<span className="text-3xl text-red-500">.</span>
           </p>
         </a>
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="#top"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="text-gray-700 dark:text-secondaryText-dark hover:primaryText dark:hover:text-white transition-colors"
             >
               Home
             </a>
@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="#about"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="text-gray-700 dark:text-secondaryText-dark hover:primaryText dark:hover:text-white transition-colors"
             >
               About
             </a>
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="#blogs"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="text-gray-700 dark:text-secondaryText-dark hover:primaryText dark:hover:text-white transition-colors"
             >
               Blogs
             </a>
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="#projects"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="text-gray-700 dark:text-secondaryText-dark hover:primaryText dark:hover:text-white transition-colors"
             >
               Projects
             </a>
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="#contact"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              className="text-gray-700 dark:text-secondaryText-dark hover:primaryText dark:hover:text-white transition-colors"
             >
               Contact Me
             </a>
@@ -106,7 +106,7 @@ const Navbar: React.FC = () => {
             <a
               href="#top"
               onClick={closeMenu}
-              className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+              className="text-gray-800 dark:text-gray-200 hover:text-secondaryText dark:hover:text-gray-400 transition-colors"
             >
               Home
             </a>
@@ -115,7 +115,7 @@ const Navbar: React.FC = () => {
             <a
               href="#about"
               onClick={closeMenu}
-              className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+              className="text-gray-800 dark:text-gray-200 hover:text-secondaryText dark:hover:text-gray-400 transition-colors"
             >
               About
             </a>
@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
             <a
               href="#blogs"
               onClick={closeMenu}
-              className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+              className="text-gray-800 dark:text-gray-200 hover:text-secondaryText dark:hover:text-gray-400 transition-colors"
             >
               Blogs
             </a>
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
             <a
               href="#projects"
               onClick={closeMenu}
-              className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+              className="text-gray-800 dark:text-gray-200 hover:text-secondaryText dark:hover:text-gray-400 transition-colors"
             >
               Projects
             </a>
@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
             <a
               href="#contact"
               onClick={closeMenu}
-              className="text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
+              className="text-gray-800 dark:text-gray-200 hover:text-secondaryText dark:hover:text-gray-400 transition-colors"
             >
               Contact Me
             </a>

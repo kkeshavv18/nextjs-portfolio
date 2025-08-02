@@ -42,8 +42,8 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantClasses =
     variant === "light"
-      ? "border-gray-400 dark:border-gray-600 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 focus:ring-gray-300 dark:focus:ring-gray-600"
-      : "border-gray-700 dark:border-gray-500 text-white bg-gray-900 dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-600 focus:ring-gray-500 dark:focus:ring-gray-400";
+      ? "border-gray-400 dark:border-secondaryText text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 focus:ring-secondaryText-dark dark:focus:ring-secondaryText"
+      : "border-gray-700 dark:border-gray-500 text-white bg-gray-900 dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-secondaryText focus:ring-gray-500 dark:focus:ring-gray-400";
 
   const disabledClasses =
     loading || disabled

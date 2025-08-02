@@ -42,7 +42,7 @@ const Hero = () => {
             duration: 0.8,
             delay: 0.5,
           }}
-          className="text-3xl sm:text-5xl font-semibold text-gray-900 dark:text-gray-100"
+          className="text-3xl sm:text-5xl font-semibold primaryText dark:text-primaryText-dark"
         >
           A Frontend Web Developer
         </motion.h1>
@@ -53,7 +53,7 @@ const Hero = () => {
             duration: 0.6,
             delay: 0.7,
           }}
-          className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300"
+          className="max-w-2xl mx-auto text-secondaryText dark:text-secondaryText-dark"
         >
           Passionate Frontend Developer skilled in React.js, Next.js, and
           TypeScript. I craft fast, responsive, and accessible web applications

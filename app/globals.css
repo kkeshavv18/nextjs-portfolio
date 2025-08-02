@@ -10,21 +10,8 @@
 
 @theme {
   /* colors */
-  --color-lightHover: #e1dcdb;
-  --color-darkHover: #2a004a;
-  --color-darkTheme: #11001f;
-
-  /* font family  */
-  --font-outfit: Outfit, sans-serif;
-  --font-ovo: Ovo, serif;
-
-  /* box shadow  */
-  --shadow-black: 4px 4px 0 #000;
-  --shadow-white: 4px 4px 0 #fff;
-}
-
-/* Dark mode overrides */
-.dark {
-  --color-lightHover: #2a004a;
-  --color-darkHover: #e1dcdb;
+  --color-primaryText: oklch(21% 0.034 264.665);
+  --color-primaryText-dark: oklch(96.7% 0.003 264.542);
+  --color-secondaryText: oklch(44.6% 0.03 256.802);
+  --color-secondaryText-dark: oklch(87.2% 0.01 258.338);
 }
