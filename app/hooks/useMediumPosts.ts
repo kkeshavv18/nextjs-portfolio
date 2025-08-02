@@ -21,10 +21,11 @@ let lastFeedCheck: string | null = null;
 
 const checkMediumFeedUpdate = async (): Promise<boolean> => {
   try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     // Use our API route to check Medium feed changes
-    const response = await fetch("/api/medium-feed", {
+    const response = await fetch(`${baseUrl}api/medium-feed`, {
       cache: "no-store",
-    });
+    }, );
 
     if (!response.ok) {
       console.warn(
