@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./shared/Button";
 import { motion } from "framer-motion";
 import { useSendEmail } from "../hooks/useSendEmail";
@@ -14,16 +14,26 @@ const Contact = () => {
     message: "",
     subject: "",
   });
-  // const [isSubmitting, setIsSubmitting] = useState(false);
-  // const [submitStatus, setSubmitStatus] = useState<
-  //   "idle" | "success" | "error"
-  // >("idle");
+  const [displayStatus, setDisplayStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const {
     isPending: isSubmitting,
     status: submitStatus,
     mutate: sendEmail,
   } = useSendEmail("https://api.emailjs.com/api/v1.0/email/send");
+
+  // Clear status message after 5 seconds
+  useEffect(() => {
+    if (submitStatus === "success" || submitStatus === "error") {
+      setDisplayStatus(submitStatus);
+      const timer = setTimeout(() => {
+        setDisplayStatus("idle");
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -195,7 +205,7 @@ const Contact = () => {
             </Button>
 
             {/* Status Messages */}
-            {submitStatus === "success" && (
+            {displayStatus === "success" && (
               <div className="p-5 bg-green-50/80 dark:bg-green-900/60 backdrop-blur-sm border border-green-200 dark:border-green-700 rounded-xl shadow-sm">
                 <p className="text-green-700 dark:text-green-200 text-sm font-medium">
                   ✓ Message sent successfully! I'll get back to you soon.
@@ -203,7 +213,7 @@ const Contact = () => {
               </div>
             )}
 
-            {submitStatus === "error" && (
+            {displayStatus === "error" && (
               <div className="p-5 bg-red-50/80 dark:bg-red-900/60 backdrop-blur-sm border border-red-200 dark:border-red-700 rounded-xl shadow-sm">
                 <p className="text-red-700 dark:text-red-200 text-sm font-medium">
                   ✗ Something went wrong. Please try again or contact me
