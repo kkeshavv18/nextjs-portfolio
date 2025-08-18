@@ -19,7 +19,7 @@ export const projectsData: projectsDataType[] = [
       "https://lsxkwmtfw8z49zdi.public.blob.vercel-storage.com/images/tradeflow-z12JfpncEniCgSnbtAfgKxhAJKVxDd.jpg",
     techNames: ["Javascript", "Next.js", "Material UI", ".NET"],
     githubLink: "#",
-    liveLink: "https://waterflow.technology/tradeflow-3/",
+    liveLink: "https://cognixinsights.com/tradeflow-3/",
     category: "Full Stack",
   },
   {
