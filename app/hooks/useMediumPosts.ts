@@ -25,7 +25,7 @@ const checkMediumFeedUpdate = async (): Promise<boolean> => {
     // Use our API route to check Medium feed changes
     const response = await fetch(`${baseUrl}api/medium-feed`, {
       cache: "no-store",
-    }, );
+    });
 
     if (!response.ok) {
       console.warn(

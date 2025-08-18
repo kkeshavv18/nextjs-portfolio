@@ -4,17 +4,26 @@ import type React from "react";
 import { useState } from "react";
 import Button from "./shared/Button";
 import { motion } from "framer-motion";
+import { useSendEmail } from "../hooks/useSendEmail";
+import { TemplateParams } from "@/app/hooks/useSendEmail";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    user_name: "",
     email: "",
     message: "",
+    subject: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [submitStatus, setSubmitStatus] = useState<
+  //   "idle" | "success" | "error"
+  // >("idle");
+
+  const {
+    isPending: isSubmitting,
+    status: submitStatus,
+    mutate: sendEmail,
+  } = useSendEmail("https://api.emailjs.com/api/v1.0/email/send");
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -26,21 +35,20 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setSubmitStatus("success");
-      setFormData({ fullName: "", email: "", message: "" });
-    } catch (error) {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-    }
+    const payload = {
+      template_params: formData,
+      service_id: "service_6xajbis",
+      template_id: "template_gfi1zz9",
+      user_id: "v632i4L5kGl4vPcVk",
+      accessToken: "1BsuwqH2p3nXxdd-b3a7G",
+    };
+    sendEmail(payload, {
+      onSuccess: () => {
+        setFormData({ user_name: "", email: "", message: "", subject: "" });
+      },
+    });
   };
 
   return (
@@ -92,7 +100,7 @@ const Contact = () => {
             {/* Full Name Field */}
             <div className="group">
               <label
-                htmlFor="fullName"
+                htmlFor="user_name"
                 className="block text-sm font-medium text-gray-700 dark:text-secondaryText-dark mb-2"
               >
                 Full Name *
@@ -100,9 +108,9 @@ const Contact = () => {
               <div className="relative">
                 <input
                   type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
+                  id="user_name"
+                  name="user_name"
+                  value={formData.user_name}
                   onChange={handleInputChange}
                   required
                   className="w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondaryText-dark dark:focus:ring-secondaryText focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-secondaryText-dark dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm"
@@ -133,6 +141,28 @@ const Contact = () => {
               </div>
             </div>
 
+            {/* Subject Field */}
+            <div className="group">
+              <label
+                htmlFor="subject"
+                className="block text-sm font-medium text-gray-700 dark:text-secondaryText-dark mb-2"
+              >
+                Subject *
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondaryText-dark dark:focus:ring-secondaryText focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-secondaryText-dark dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm"
+                  placeholder="Enter a subject"
+                />
+              </div>
+            </div>
+
             {/* Message Field */}
             <div className="group">
               <label
@@ -149,7 +179,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondaryText-dark dark:focus:ring-secondaryText focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-secondaryText-dark dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm resize-vertical"
+                  className="text-white w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondaryText-dark dark:focus:ring-secondaryText focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-secondaryText-dark dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm resize-vertical"
                   placeholder="Tell me about your project or just say hello..."
                 />
               </div>
