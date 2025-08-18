@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 
 export interface EmailPayload {
   service_id: string;
@@ -15,7 +15,10 @@ export interface TemplateParams {
   subject: string;
 }
 
-const sendEmail = async (url: string, payload: EmailPayload): Promise<any> => {
+const sendEmail = async (
+  url: string,
+  payload: EmailPayload
+): Promise<string> => {
   const response = await fetch(url, {
     method: "POST",
     headers: {
