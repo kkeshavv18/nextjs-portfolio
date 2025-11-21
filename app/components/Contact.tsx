@@ -66,29 +66,13 @@ const Contact = () => {
       id="contact"
       className="w-full px-[12%] py-16 flex flex-col items-center justify-center gap-6"
     >
-      <motion.h4
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-        }}
-        className=" text-3xl font-ovo font-semibold primaryText dark:text-primaryText-dark"
-      >
+      <h4 className=" text-3xl font-ovo font-semibold primaryText dark:text-primaryText-dark">
         Get In Touch
-      </motion.h4>
-      <motion.p
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: 0.7,
-        }}
-        className=" text-secondaryText dark:text-secondaryText-dark"
-      >
+      </h4>
+      <p className=" text-secondaryText dark:text-secondaryText-dark">
         Have a project in mind or want to collaborate? I'd love to hear from
         you. Send me a message and I'll get back to you as soon as possible.
-      </motion.p>
+      </p>
 
       {/* Contact Form Card */}
       <div className="w-full lg:w-3/5">
@@ -100,13 +84,7 @@ const Contact = () => {
             <div className="w-12 h-0.5 bg-gradient-to-r from-gray-400 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-full"></div>
           </div>
 
-          <motion.form
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Full Name Field */}
             <div className="group">
               <label
@@ -189,7 +167,17 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="text-white w-full px-5 py-2 bg-gray-50/50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondaryText-dark dark:focus:ring-secondaryText focus:border-transparent focus:bg-white dark:focus:bg-gray-900 focus:shadow-md transition-all duration-300 hover:border-secondaryText-dark dark:hover:border-gray-500 hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm resize-vertical"
+                  className="w-full px-5 py-2
+    bg-gray-50/50 dark:bg-gray-800
+    border border-gray-200 dark:border-gray-700
+    rounded-xl
+    placeholder-gray-400 dark:placeholder-gray-500
+    focus:outline-none focus:ring-2 focus:ring-secondaryText-dark dark:focus:ring-secondaryText
+    focus:border-transparent focus:bg-white dark:focus:bg-gray-900
+    focus:shadow-md
+    transition-all duration-300
+    hover:border-secondaryText-dark dark:hover:border-gray-500
+    hover:bg-white dark:hover:bg-gray-900 hover:shadow-sm"
                   placeholder="Tell me about your project or just say hello..."
                 />
               </div>
@@ -221,7 +209,7 @@ const Contact = () => {
                 </p>
               </div>
             )}
-          </motion.form>
+          </form>
         </div>
       </div>
     </div>
