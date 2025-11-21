@@ -17,13 +17,25 @@ export const projectsData: projectsDataType[] = [
       "Tradeflow is an all-encompassing platform tailored for companies offering brokerage services, eliminating the need for additional software. It provides a robust back-end system, connectivity gateways to exchanges, liquidity and payment providers, and a wide array of APIs for seamless integration with websites, trading systems, CRMs, and post-trading systems.",
     image:
       "https://lsxkwmtfw8z49zdi.public.blob.vercel-storage.com/images/tradeflow-z12JfpncEniCgSnbtAfgKxhAJKVxDd.jpg",
-    techNames: ["Javascript", "Next.js", "Material UI", ".NET"],
+    techNames: ["Typescript", "Next.js", "Material UI", ".NET"],
     githubLink: "#",
     liveLink: "https://cognixinsights.com/tradeflow-3/",
     category: "Full Stack",
   },
   {
     id: 2,
+    title: "SMS Report",
+    description:
+      "A dashboard built with Next.js and Shadcn/ui, providing real-time analytics on SMS traffic (Ncell, NTC) sent to clients by different companies.",
+    image:
+      "https://lsxkwmtfw8z49zdi.public.blob.vercel-storage.com/images/smsreport.png",
+    techNames: ["Typescript", "Next.js", "Shadcn/ui", ".NET"],
+    githubLink: "#",
+    liveLink: "#",
+    category: "Full Stack",
+  },
+  {
+    id: 3,
     title: "Youtube Clone",
     description:
       "A fully responsive video streaming web app inspired by YouTube, built using React, JavaScript, and Material UI. It features video listings, a search bar, and embedded video playback.",
@@ -35,7 +47,7 @@ export const projectsData: projectsDataType[] = [
     category: "Frontend",
   },
   {
-    id: 3,
+    id: 4,
     title: "Nepali Date Picker",
     description:
       "A reusable and customizable React component library written in TypeScript and CSS, allowing users to pick Nepali (Bikram Sambat) calendar dates with modern UI and accessibility features.",
@@ -47,7 +59,7 @@ export const projectsData: projectsDataType[] = [
     category: "Npm Package",
   },
   {
-    id: 4,
+    id: 5,
     title: "Leetcode Problem Solver",
     description:
       "A Chrome extension developed with HTML, CSS, and JavaScript that enhances the LeetCode problem-solving experience by providing quick navigation, hints, or utility tools during coding practice.",
@@ -59,7 +71,7 @@ export const projectsData: projectsDataType[] = [
     category: "Chrome Extension",
   },
   {
-    id: 5,
+    id: 6,
     title: "Calculator App",
     description:
       "A simple and clean web-based calculator built using HTML, CSS, and JavaScript, capable of performing basic arithmetic operations with an intuitive interface.",
