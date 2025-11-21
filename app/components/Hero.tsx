@@ -84,7 +84,7 @@ const Hero = () => {
           >
             <Button
               variant="light"
-              href="/sample-resume.pdf"
+              href="/keshavkattel.pdf"
               endIcon={<Download />}
               download
             >
